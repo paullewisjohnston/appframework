@@ -1,0 +1,14 @@
+{
+  "logo": "https://avatars.githubusercontent.com/u/24401125?s=60&v=4",
+  "title": "AppFramework",
+  "menuItems": ["Latest", "Download", "Store", "Signup"],
+  "search": true,
+  "cart": true,
+  "footer": true,
+  "footerItems": [
+  ],
+  "copyright": "Copyright © 2022 AppFramework. All rights reserved.",
+  "linkedin": "//linkedin.com/in/paul-lewis-johnston-3abb6b100/",
+  "github": "//github.com/paullewisjohnston",
+  "email": "pjohnston36@qub.ac.uk"
+}
