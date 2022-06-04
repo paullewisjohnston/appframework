@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Typography, Box, Avatar} from '@mui/material'
+import { Container, Grid, Typography, Box} from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
