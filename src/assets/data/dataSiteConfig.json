@@ -1,7 +1,7 @@
 {
   "logo": "https://avatars.githubusercontent.com/u/24401125?s=60&v=4",
   "title": "AppFramework",
-  "menuItems": ["Latest", "Download", "Store", "Signup"],
+  "menuItems": ["Latest", "Store", "Download", "Signup"],
   "search": true,
   "cart": true,
   "footer": true,

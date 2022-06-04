@@ -5,7 +5,7 @@ import { Link as RouterLink } from 'react-router-dom';
 const styles={
   logo: {
     width: '24px',
-    height: '24px',
+    height: '24px'
   },
   logoMobile: {
     flexGrow: 1
@@ -14,6 +14,7 @@ const styles={
     opacity: '0.8',
     width: '40px',
     height: '40px',
+    margin: '0px'
   }
 };
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route} from "react-router-dom"
+import { HashRouter, Routes, Route} from "react-router-dom"
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Signup from './pages/auth/Signup.js'
@@ -19,7 +19,7 @@ import './App.css'
 function App(){
   return(
   <div sx="App" style={{overflowX:'clip'}}>
-    <BrowserRouter>
+    <HashRouter>
       <Header dataSiteConfig={dataSiteConfig}/>
         <Routes>
           {/* Menu routes*/}
@@ -49,7 +49,7 @@ function App(){
           <Route path="/gocardless-failed" element={<GoCardlessFailed />}/>
         </Routes>
       <Footer dataSiteConfig={dataSiteConfig} />
-    </BrowserRouter>
+    </HashRouter>
   </div>
   );
 }

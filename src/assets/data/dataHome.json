@@ -2,7 +2,7 @@
   {
     "id": 1,
     "url": "queens-university-belfast",
-    "type": "PreviewCard",
+    "type": "CardImageNone",
     "itemsPerRow": "1",
     "backgroundImage": "qub.png",
     "heading": "Queen's University Belfast",
@@ -10,14 +10,15 @@
     "description": "Modules Include: Advanced Software Engineering, Algorithms: Analysis & Applications, High Performance Computing: Principles of Parallel Programming, Advanced Intelligent Information Systems, Information Systems Security, Agile and Component Based Development, Advanced Programming using C# and C++, Data Structures and Algorithms.",
     "buttonPrimary": 
       {
-        "text":""
+        "text":"Buy",
+        "link":""
       },
       "buttonSecondary": 
       {
-        "text":"",
+        "text":"Learn More",
         "link":""
       },
-    "image": "https://raw.githubusercontent.com/paullewisjohnston/appframework/master/src/assets/images/placeholder.webp",
+    "image": "https://www.apple.com/v/home/ao/images/promos/watch-series-7/promo_watch_lte__djeaso7ukrsm_small_2x.jpg",
     "background": "#fff7f9",
     "color": "primarylight",
     "createdAt": "2019-11-17T19:07:45.301Z",
@@ -25,7 +26,7 @@
   },
   {
     "id": 20,
-    "type": "PreviewCard",
+    "type": "CardImageRight",
     "itemsPerRow": "2",
     "backgroundImage": "https://www.apple.com/v/home/ab/images/heroes/iphone-12-pro/iphone_12_pro_us__e5oyysg4k0ya_largetall.jpg",
     "heading": "GoCardless",
@@ -33,12 +34,12 @@
     "description": "I've recently joined GoCardless as a Business Systems Engineer. This is a hybrid role, whereby I am a member of the IT Engineering team whilst also being forward deployed to the Risk & Compliance Operations team. My role involves improving the team's efficiency through process improvement, configuration of business systems and building automation tools where necessary.",
     "buttonPrimary": 
       {
-        "text":"",
+        "text":"Buy",
         "link":""
       },
       "buttonSecondary": 
       {
-        "text":"",
+        "text":"Learn More",
         "link":""
       },
     "image": "https://raw.githubusercontent.com/paullewisjohnston/appframework/master/src/assets/images/placeholder.webp",
@@ -49,7 +50,7 @@
   },
   {
     "id": 2,
-    "type": "PreviewCard",
+    "type": "CardImageTop",
     "itemsPerRow": "2",
     "backgroundImage": "https://www.apple.com/v/home/ab/images/heroes/iphone-12-pro/iphone_12_pro_us__e5oyysg4k0ya_largetall.jpg",
     "heading": "Universal Music Group",
@@ -57,12 +58,12 @@
     "description": "As a Product Owner on the Global Tech Team for Universal Production Music, my role involves liasing between the business and the Software Development Teams to plan & prioritise feature implementation, explore/review ideas and drive the direction of the application.",
     "buttonPrimary": 
       {
-        "text":"",
+        "text":"Buy",
         "link":""
       },
       "buttonSecondary": 
       {
-        "text":"",
+        "text":"Learn More",
         "link":""
       },
     "image": "https://raw.githubusercontent.com/paullewisjohnston/appframework/master/src/assets/images/placeholder.webp",
@@ -73,7 +74,7 @@
   },
   {
     "id": 3,
-    "type": "PreviewCard",
+    "type": "CardImageRight",
     "itemsPerRow": "2",
     "backgroundImage": "https://www.apple.com/v/home/ab/images/promos/back-to-school-2021/promo_bts__bg3cb4kaoqoi_large.jpg",
     "heading": "The Coca-Cola Company",
@@ -81,12 +82,12 @@
     "description": "The USNI Mentorship programme connects future business leaders from Northern Ireland with high profile US corporations. Day-to-day work involved Digital Automation and Transformation projects, whilst being mentored in leadership and strategy.",
     "buttonPrimary": 
       {
-        "text":"",
+        "text":"Buy",
         "link":""
       },
       "buttonSecondary": 
       {
-        "text":"",
+        "text":"Learn More",
         "link":""
       },
     "image": "https://raw.githubusercontent.com/paullewisjohnston/appframework/master/src/assets/images/placeholder.webp",
@@ -97,7 +98,7 @@
   },
   {
     "id": 4,
-    "type": "PreviewCard",
+    "type": "CardImageTop",
     "itemsPerRow": "2",
     "backgroundImage": "https://www.apple.com/v/home/ab/images/promos/arcade-ultimate-rivals/promo_arcade__e7ps46tldi62_large.jpg",
     "heading": "Cora Systems",
@@ -105,12 +106,12 @@
     "description": "As part of the Solutions Engagement Team, I configured and demoed project management software for clients across multiple business verticals. I also studied International Business Management at IMI Dublin.",
     "buttonPrimary": 
       {
-        "text":"",
+        "text":"Buy",
         "link":""
       },
       "buttonSecondary": 
       {
-        "text":"",
+        "text":"Learn More",
         "link":""
       },
     "image": "https://raw.githubusercontent.com/paullewisjohnston/appframework/master/src/assets/images/placeholder.webp",
