@@ -1,16 +1,9 @@
 import React from 'react';
-import { Container, Grid, Typography, Box, Avatar} from '@mui/material'
+import { Container, Grid, Typography, Box} from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
 const styles={
-  content:{
-    margin: 'auto',
-    padding: '0px 10px'
-  },
-  spacing:{
-    padding: '15px'
-  },
   image: {
     maxWidth: '200px',
     width: '100%',
