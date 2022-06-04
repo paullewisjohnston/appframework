@@ -19,7 +19,7 @@ export default function Grid(props) {
       :
         <GridLayout container spacing={1}>
           {props.data.map(item => (
-            item.type == "PreviewCard" ?
+            item.type === "PreviewCard" ?
             <PreviewCard {...props} key={item.id} item={item}/>
             : <SubscriptionCard {...props} key={item.id} item={item}/>
             ))}
