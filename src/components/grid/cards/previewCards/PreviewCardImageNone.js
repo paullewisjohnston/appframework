@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Typography, Box, Button } from '@mui/material'
+import { Container, Grid, Typography, Box, Button} from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
@@ -35,22 +35,10 @@ const styles={
   },
   containerLink: {
     padding: '0 10px 0 10px'
-  },
-  containerImage: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems:'center',
-    padding: '20px'
-  },
-  image: {
-    maxWidth: '200px',
-    width: '100%',
-    height: 'auto',
-    margin: 'auto',
-  },
+  }
 };
 
-export default function CardImageTop(props) {
+export default function PreviewCardImageNone(props) {
   const theme = useTheme();
   const gridNum = 12/props.item.itemsPerRow
   const height = (gridNum===12) ? "700px" : "650px"
@@ -58,9 +46,6 @@ export default function CardImageTop(props) {
     <Grid key={props.item.id} item xs={12} lg={gridNum}>
       <Box sx={styles.gridItem} style={{ height: height, backgroundColor: props.item.background}} >
         <Container sx={styles.container} maxWidth='sm' style={{color:theme.palette.text[props.item.color]}}>
-          <Container sx={styles.containerImage}>
-            <Box component="img" alt="image description" src={props.item.image}  sx={{ width: 250, height: 250, marginBottom: '40px' }}/>
-          </Container>
           <Container sx={styles.containerTypography} >
             <Typography variant="h3" gutterBottom component="div">
               {props.item.heading}

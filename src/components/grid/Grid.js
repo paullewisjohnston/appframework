@@ -1,10 +1,10 @@
 import React from 'react';
 import SubscriptionCard from './cards/SubscriptionCard';
-import CardImageLeft from './cards/CardImageLeft';
-import CardImageTop from './cards/CardImageTop';
-import CardImageRight from './cards/CardImageRight';
-import CardImageBottom from './cards/CardImageBottom';
-import CardImageNone from './cards/CardImageNone';
+import PreviewCardImageLeft from './cards/previewCards/PreviewCardImageLeft';
+import PreviewCardImageTop from './cards/previewCards/PreviewCardImageTop';
+import PreviewCardImageRight from './cards/previewCards/PreviewCardImageRight';
+import PreviewCardImageBottom from './cards/previewCards/PreviewCardImageBottom';
+import PreviewCardImageNone from './cards/previewCards/PreviewCardImageNone';
 import { Grid as GridLayout} from '@mui/material';
 
 const styles={
@@ -16,11 +16,11 @@ const styles={
 const cardSelector = (props, item) => {
   return(
     <React.Fragment>
-      {item.type==="CardImageLeft" && <CardImageLeft {...props} item={item}/>}
-      {item.type==="CardImageTop" && <CardImageTop {...props} item={item}/>}
-      {item.type==="CardImageRight" && <CardImageRight {...props} item={item}/>}
-      {item.type==="CardImageBottom" && <CardImageBottom {...props} item={item}/>}
-      {item.type==="CardImageNone" && <CardImageNone {...props} item={item}/>}
+      {item.type==="CardImageLeft" && <PreviewCardImageLeft {...props} item={item}/>}
+      {item.type==="CardImageTop" && <PreviewCardImageTop {...props} item={item}/>}
+      {item.type==="CardImageRight" && <PreviewCardImageRight {...props} item={item}/>}
+      {item.type==="CardImageBottom" && <PreviewCardImageBottom {...props} item={item}/>}
+      {item.type==="CardImageNone" && <PreviewCardImageNone {...props} item={item}/>}
       {item.type==="SubscriptionCard" && <SubscriptionCard {...props} item={item}/>}
     </React.Fragment>
   )

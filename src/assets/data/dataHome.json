@@ -10,12 +10,12 @@
     "description": "Magic like you've never heard",
     "buttonPrimary": 
       {
-        "text":"Learn More",
+        "text":"Signup",
         "link":""
       },
       "buttonSecondary": 
       {
-        "text":"Buy",
+        "text":"Download",
         "link":""
       },
     "image": "https://raw.githubusercontent.com/paullewisjohnston/appframework/master/src/assets/images/placeholder.webp",

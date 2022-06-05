@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Grid, Typography, Box, Button } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
-import CardImageBottom from './CardImageBottom';
+import PreviewCardImageBottom from './PreviewCardImageBottom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const styles={
@@ -57,7 +57,7 @@ const styles={
   },
 };
 
-export default function CardImageLeft(props) {
+export default function PreviewCardImageRight(props) {
   const desktop = useMediaQuery(theme => theme.breakpoints.up('md'));
   const theme = useTheme();
   const gridNum = 12/props.item.itemsPerRow
@@ -97,7 +97,7 @@ export default function CardImageLeft(props) {
         </Box>
       </Grid>
       :
-      <CardImageBottom {...props}/>
+      <PreviewCardImageBottom {...props}/>
     }
     </React.Fragment>
   );
