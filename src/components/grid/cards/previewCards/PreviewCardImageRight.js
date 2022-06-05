@@ -3,7 +3,6 @@ import { Container, Grid, Typography, Box, Button } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import PreviewCardImageBottom from './PreviewCardImageBottom';
-import useMediaQuery from '@mui/material/useMediaQuery';
 
 const styles={
   gridItem: {
@@ -58,13 +57,12 @@ const styles={
 };
 
 export default function PreviewCardImageRight(props) {
-  const desktop = useMediaQuery(theme => theme.breakpoints.up('md'));
   const theme = useTheme();
   const gridNum = 12/props.item.itemsPerRow
   const height = (gridNum===12) ? "700px" : "650px"
   return(
     <React.Fragment>
-    {desktop && (gridNum===12) ?
+    {props.desktop && (gridNum===12) ?
       <Grid key={props.item.id} item xs={12} lg={gridNum}>
         <Box sx={styles.gridItem} style={{ height: height, backgroundColor: props.item.background}} >
           <Container sx={styles.container} maxWidth='lg' style={{color:theme.palette.text[props.item.color]}}>

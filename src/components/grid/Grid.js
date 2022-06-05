@@ -16,11 +16,11 @@ const styles={
 const cardSelector = (props, item) => {
   return(
     <React.Fragment>
-      {item.type==="CardImageLeft" && <PreviewCardImageLeft {...props} item={item}/>}
-      {item.type==="CardImageTop" && <PreviewCardImageTop {...props} item={item}/>}
-      {item.type==="CardImageRight" && <PreviewCardImageRight {...props} item={item}/>}
-      {item.type==="CardImageBottom" && <PreviewCardImageBottom {...props} item={item}/>}
-      {item.type==="CardImageNone" && <PreviewCardImageNone {...props} item={item}/>}
+      {item.type==="PreviewCardImageLeft" && <PreviewCardImageLeft {...props} item={item}/>}
+      {item.type==="PreviewCardImageTop" && <PreviewCardImageTop {...props} item={item}/>}
+      {item.type==="PreviewCardImageRight" && <PreviewCardImageRight {...props} item={item}/>}
+      {item.type==="PreviewCardImageBottom" && <PreviewCardImageBottom {...props} item={item}/>}
+      {item.type==="PreviewCardImageNone" && <PreviewCardImageNone {...props} item={item}/>}
       {item.type==="SubscriptionCard" && <SubscriptionCard {...props} item={item}/>}
     </React.Fragment>
   )

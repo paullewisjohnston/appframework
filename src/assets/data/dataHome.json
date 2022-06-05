@@ -2,7 +2,7 @@
   {
     "id": 1,
     "url": "queens-university-belfast",
-    "type": "CardImageRight",
+    "type": "PreviewCardImageRight",
     "itemsPerRow": "1",
     "backgroundImage": "qub.png",
     "heading": "AirPods Pro",
@@ -26,7 +26,7 @@
   },
   {
     "id": 20,
-    "type": "CardImageRight",
+    "type": "PreviewCardImageRight",
     "itemsPerRow": "2",
     "backgroundImage": "https://www.apple.com/v/home/ab/images/heroes/iphone-12-pro/iphone_12_pro_us__e5oyysg4k0ya_largetall.jpg",
     "heading": "GoCardless",
@@ -50,7 +50,7 @@
   },
   {
     "id": 2,
-    "type": "CardImageLeft",
+    "type": "PreviewCardImageLeft",
     "itemsPerRow": "2",
     "backgroundImage": "https://www.apple.com/v/home/ab/images/heroes/iphone-12-pro/iphone_12_pro_us__e5oyysg4k0ya_largetall.jpg",
     "heading": "Universal Music Group",
@@ -74,7 +74,7 @@
   },
   {
     "id": 3,
-    "type": "CardImageRight",
+    "type": "PreviewCardImageRight",
     "itemsPerRow": "2",
     "backgroundImage": "https://www.apple.com/v/home/ab/images/promos/back-to-school-2021/promo_bts__bg3cb4kaoqoi_large.jpg",
     "heading": "The Coca-Cola Company",
@@ -98,7 +98,7 @@
   },
   {
     "id": 4,
-    "type": "CardImageLeft",
+    "type": "PreviewCardImageLeft",
     "itemsPerRow": "2",
     "backgroundImage": "https://www.apple.com/v/home/ab/images/promos/arcade-ultimate-rivals/promo_arcade__e7ps46tldi62_large.jpg",
     "heading": "Cora Systems",

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { AppBar, Toolbar, Container} from '@mui/material';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile'
 
@@ -19,14 +18,12 @@ export default function Header(props) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searching, setSearching] = useState(false)
 
-  const desktop = useMediaQuery(theme => theme.breakpoints.up('md'));
-
   return (
     <div sx={styles.root}>
       <AppBar position="fixed">
         <Container fixed maxWidth='md' sx={styles.toolbar}>
           <Toolbar variant='dense' disableGutters sx={styles.toolbar}>
-           { desktop ?
+           { props.desktop ?
               <HeaderDesktop 
                 dataSiteConfig={props.dataSiteConfig}
                 menuItems={props.dataSiteConfig.menuItems}

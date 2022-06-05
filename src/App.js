@@ -13,42 +13,44 @@ import GoCardlessFailed from './pages/payment/GoCardlessFailed'
 import dataSiteConfig from './assets/data/dataSiteConfig';
 import dataHome from './assets/data/dataHome';
 import dataSubscription from './assets/data/dataSubscription';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import './App.css'
 
 function App(){
+  const desktop = useMediaQuery(theme => theme.breakpoints.up('md'));
   return(
   <div sx="App" style={{overflowX:'clip'}}>
     <HashRouter>
-      <Header dataSiteConfig={dataSiteConfig}/>
+      <Header dataSiteConfig={dataSiteConfig} desktop={desktop}/>
         <Routes>
           {/* Menu routes*/}
-          <Route path="/" element={<LandingPage data={dataHome}/>}/>
-          <Route path="/latest" element={<LandingPage data={dataHome}/>}/>
-          <Route path="/download" element={<LandingPage data={dataHome}/>}/>
-          <Route path="/store" element={<LandingPage data={dataHome}/>}/>
-          <Route path="/signup" element={<LandingPage data={dataHome}/>}/>
+          <Route path="/" element={<LandingPage data={dataHome} desktop={desktop}/>}/>
+          <Route path="/latest" element={<LandingPage data={dataHome} desktop={desktop}/>}/>
+          <Route path="/download" element={<LandingPage data={dataHome} desktop={desktop}/>}/>
+          <Route path="/store" element={<LandingPage data={dataHome} desktop={desktop}/>}/>
+          <Route path="/signup" element={<LandingPage data={dataHome} desktop={desktop}/>}/>
 
           {/* Footer routes*/}
-          <Route path="/contact" element={<LandingPage data={dataHome}/>}/>
+          <Route path="/contact" element={<LandingPage data={dataHome} desktop={desktop}/>}/>
 
           {/* Dynamic Pages */}
-          <Route path="/items" element={<LandingPage data={dataHome}/>}>
-            <Route path=":id" element={<DetailPage data={dataHome}/>}/>
+          <Route path="/items" element={<LandingPage data={dataHome} desktop={desktop}/>}>
+            <Route path=":id" element={<DetailPage data={dataHome} desktop={desktop}/>}/>
           </Route>
 
           {/* Authentication routes */}
-          <Route path="/signup" element={<Signup/>}/>
-          <Route path="/signin" element={<Signin/>}/>
+          <Route path="/signup" element={<Signup/>} desktop={desktop}/>
+          <Route path="/signin" element={<Signin/>} desktop={desktop}/>
 
           {/* Subscription & Payment routes */}
-          <Route path="/subscription" element={<LandingPage data={dataSubscription}/>}/>
+          <Route path="/subscription" element={<LandingPage data={dataSubscription}/>} desktop={desktop}/>
           <Route path="/gocardless" element={<GoCardless />}/>
-          <Route path="/gocardless-redirect" element={<GoCardlessRedirect />}/>
-          <Route path="/gocardless-success" element={<GoCardlessSuccess />}/>
-          <Route path="/gocardless-failed" element={<GoCardlessFailed />}/>
+          <Route path="/gocardless-redirect" element={<GoCardlessRedirect />} desktop={desktop}/>
+          <Route path="/gocardless-success" element={<GoCardlessSuccess />} desktop={desktop}/>
+          <Route path="/gocardless-failed" element={<GoCardlessFailed />} desktop={desktop}/>
         </Routes>
-      <Footer dataSiteConfig={dataSiteConfig} />
+      <Footer dataSiteConfig={dataSiteConfig} desktop={desktop}/>
     </HashRouter>
   </div>
   );

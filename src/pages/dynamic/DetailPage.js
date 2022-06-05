@@ -8,7 +8,7 @@ function DetailPage(props){
   let params = useParams();
   return(
     <React.Fragment style={{color:theme['color1'],background:theme['color2']}}>
-      <Grid dynamicPage={true} theme={props.theme} data={props.data.find(page => page.url.toString() === params.id)}/>
+      <Grid {...props} dynamicPage={true} theme={props.theme} data={props.data.find(page => page.url.toString() === params.id)}/>
     </React.Fragment>
   )
 }

@@ -4,7 +4,7 @@ import Grid from '../../components/grid/Grid';
 function LandingPage(props){
   return(
     <React.Fragment>
-      <Grid data={props.data} />
+      <Grid {...props} data={props.data} />
     </React.Fragment>
   )
 }
