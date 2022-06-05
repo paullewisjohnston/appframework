@@ -1,22 +1,9 @@
 import React from 'react';
-import { Container, Grid, Typography, Box, Avatar} from '@mui/material'
+import { Container, Grid, Typography, Box, Button } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
 const styles={
-  content:{
-    margin: 'auto',
-    padding: '0px 10px'
-  },
-  spacing:{
-    padding: '15px'
-  },
-  image: {
-    maxWidth: '200px',
-    width: '100%',
-    height: 'auto',
-    margin: 'auto',
-  },
   gridItem: {
     textAlign:'center',
     width: '100%',
@@ -25,11 +12,12 @@ const styles={
     backgroundRepeat: 'no-repeat'
   },
   container: {
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems:'center',
-    justifyContent:'space-between',
-    padding: '80px 40px'
+    justifyContent:'center',
+    padding: '100px 40px'
   },
   containerTypography: {
     display: 'flex',
@@ -46,47 +34,50 @@ const styles={
     padding: '0px'
   },
   containerLink: {
-    padding: '20px'
+    padding: '0 10px 0 10px'
   },
   containerImage: {
     display: 'flex',
     flexDirection: 'column',
     alignItems:'center',
     padding: '20px'
-  }
+  },
+  image: {
+    maxWidth: '200px',
+    width: '100%',
+    height: 'auto',
+    margin: 'auto',
+  },
 };
 
-export default function CardImageBottom(props) {
+export default function CardImageTop(props) {
   const theme = useTheme();
   const gridNum = 12/props.item.itemsPerRow
-  const height = (gridNum===12) ? "900px" : "100%"
+  const height = (gridNum===12) ? "700px" : "650px"
   return(
     <Grid key={props.item.id} item xs={12} lg={gridNum}>
       <Box sx={styles.gridItem} style={{ height: height, backgroundColor: props.item.background}} >
         <Container sx={styles.container} maxWidth='sm' style={{color:theme.palette.text[props.item.color]}}>
           <Container sx={styles.containerImage}>
-            <Avatar alt="Company Logo" src={props.item.image}  sx={{ width: 250, height: 250, marginBottom: '40px' }}/>
+            <Box component="img" alt="image description" src={props.item.image}  sx={{ width: 250, height: 250, marginBottom: '40px' }}/>
           </Container>
           <Container sx={styles.containerTypography} >
             <Typography variant="h3" gutterBottom component="div">
               {props.item.heading}
             </Typography>
-            <Typography variant="h5" gutterBottom component="div">
+            <Typography variant="body1" gutterBottom component="div">
               {props.item.subheading}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              {props.item.description}
             </Typography>
           </Container>
           <Container sx={styles.containerLinks} >
             {props.item.buttonPrimary.text &&
             <Box sx={styles.containerLink} >
-              <RouterLink to={props.item.buttonPrimary.link} color="inherit" variant="h6">{props.item.buttonPrimary.text}</RouterLink>
+              <Button variant='outlined' component={RouterLink} to={props.item.buttonPrimary.link} >{props.item.buttonPrimary.text}</Button>
             </Box >
             }
             {props.item.buttonSecondary.text &&
             <Box sx={styles.containerLink} >
-              <RouterLink underline="hover" to={props.item.buttonSecondary.link} color="inherit" variant="h6">{props.item.buttonSecondary.text}</RouterLink>
+              <Button variant='contained' component={RouterLink} to={props.item.buttonSecondary.link} >{props.item.buttonSecondary.text}</Button>
             </Box >
             }
           </Container>

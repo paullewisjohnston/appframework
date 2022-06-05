@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Typography, Box} from '@mui/material'
+import { Container, Grid, Typography, Box, Button} from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
@@ -12,10 +12,11 @@ const styles={
     backgroundRepeat: 'no-repeat'
   },
   container: {
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems:'center',
-    justifyContent:'space-between',
+    justifyContent:'center',
     padding: '100px 40px'
   },
   containerTypography: {
@@ -33,14 +34,14 @@ const styles={
     padding: '0px'
   },
   containerLink: {
-    padding: '20px'
+    padding: '0 10px 0 10px'
   }
 };
 
-export default function CardImageBottom(props) {
+export default function CardImageNone(props) {
   const theme = useTheme();
   const gridNum = 12/props.item.itemsPerRow
-  const height = (gridNum===12) ? "600px" : "100%"
+  const height = (gridNum===12) ? "700px" : "650px"
   return(
     <Grid key={props.item.id} item xs={12} lg={gridNum}>
       <Box sx={styles.gridItem} style={{ height: height, backgroundColor: props.item.background}} >
@@ -49,22 +50,19 @@ export default function CardImageBottom(props) {
             <Typography variant="h3" gutterBottom component="div">
               {props.item.heading}
             </Typography>
-            <Typography variant="h5" gutterBottom component="div">
+            <Typography variant="body1" gutterBottom component="div">
               {props.item.subheading}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              {props.item.description}
             </Typography>
           </Container>
           <Container sx={styles.containerLinks} >
             {props.item.buttonPrimary.text &&
             <Box sx={styles.containerLink} >
-              <RouterLink to={props.item.buttonPrimary.link} color="inherit" variant="h6">{props.item.buttonPrimary.text}</RouterLink>
+              <Button variant='outlined' component={RouterLink} to={props.item.buttonPrimary.link} >{props.item.buttonPrimary.text}</Button>
             </Box >
             }
             {props.item.buttonSecondary.text &&
             <Box sx={styles.containerLink} >
-              <RouterLink underline="hover" to={props.item.buttonSecondary.link} color="inherit" variant="h6">{props.item.buttonSecondary.text}</RouterLink>
+              <Button variant='contained' component={RouterLink} to={props.item.buttonSecondary.link} >{props.item.buttonSecondary.text}</Button>
             </Box >
             }
           </Container>

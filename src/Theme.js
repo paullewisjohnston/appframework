@@ -24,28 +24,35 @@ export const Theme = createTheme({
   typography: {
     fontFamily: 'Open Sans',
     h1: {
-      fontFamily: 'Lato',
+      fontFamily: 'Open Sans',
       fontSize: '4rem',
+      fontWeight: 'bold'
     },
     h2: {
-      fontFamily: 'Lato',
+      fontFamily: 'Open Sans',
       fontSize: '3.5rem',
+      fontWeight: 'bold'
     },
     h3: {
-      fontFamily: 'Lato',
-      fontSize: '3rem'
+      fontFamily: 'Open Sans',
+      fontSize: '3rem',
+      fontWeight: 'bold'
     },
     h4: {
-      fontFamily: 'Lato',
+      fontFamily: 'Open Sans',
       fontSize: '2.5rem'
     },
     h5: {
-      fontFamily: 'Lato',
+      fontFamily: 'Open Sans',
       fontSize: '2rem'
     },
     h6: {
-      fontFamily: 'Lato',
+      fontFamily: 'Open Sans',
       fontSize: '1.5rem'
+    },
+    body1: {
+      fontFamily: 'Open Sans',
+      fontSize: '1.2rem'
     },
     button: {
       textTransform: 'none'
@@ -88,12 +95,31 @@ export const Theme = createTheme({
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
-      }
+        elevation: 0,
+      },
+      styleOverrides: {
+        root: {
+          elevation: 0
+        },
+      },
+    },
+    MuiButton: {
+      defaultProps: {
+        elevation: 0,
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: 40,
+          elevation: 0,
+          boxShadow: 'none'
+        },
+      },
     },
     MuiLink: {
       defaultProps: {
         underline: 'hover',
+        variant: 'body1'
       }
-    },
+    }
   },
 });

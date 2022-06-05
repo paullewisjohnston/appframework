@@ -1,5 +1,4 @@
 import React from 'react';
-import PreviewCard from './cards/PreviewCard';
 import SubscriptionCard from './cards/SubscriptionCard';
 import CardImageLeft from './cards/CardImageLeft';
 import CardImageTop from './cards/CardImageTop';
@@ -23,7 +22,6 @@ const cardSelector = (props, item) => {
       {item.type==="CardImageBottom" && <CardImageBottom {...props} item={item}/>}
       {item.type==="CardImageNone" && <CardImageNone {...props} item={item}/>}
       {item.type==="SubscriptionCard" && <SubscriptionCard {...props} item={item}/>}
-      {item.type==="PreviewCard" && <PreviewCard {...props} item={item}/>}
     </React.Fragment>
   )
 }
@@ -33,7 +31,9 @@ export default function Grid(props) {
     <GridLayout container sx={styles.root}>
       {props.dynamicPage ? 
         <GridLayout container spacing={1}>
-          <PreviewCard {...props} key={props.data.id} item={props.data}/>
+          <React.Fragment key={props.data.id}>
+              {cardSelector(props, props.data)}
+            </React.Fragment>
         </GridLayout>
       :
         <GridLayout container spacing={1}>

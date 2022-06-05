@@ -1,7 +1,9 @@
 import React from 'react';
-import { Container, Grid, Typography, Box } from '@mui/material'
+import { Container, Grid, Typography, Box, Button } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
+import CardImageBottom from './CardImageBottom';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const styles={
   gridItem: {
@@ -12,28 +14,15 @@ const styles={
     backgroundRepeat: 'no-repeat'
   },
   container: {
-    height:'100%',
+    height: '100%',
     display: 'flex',
     flexDirection: 'row',
     alignItems:'center',
-    justifyContent:'space-between',
-    padding: '80px 40px'
-  },
-  containerImage: {
-    width:'50%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems:'center',
-    padding: '20px'
-  },
-  image: {
-    maxWidth: '600px',
-    width: '100%',
-    height: 'auto',
-    margin: 'auto',
+    justifyContent:'center',
+    padding: '100px 40px'
   },
   containerTypographyAndLinks: {
-    width:'50%',
+    width:'60%',
     padding: '20px'
   },
   containerTypography: {
@@ -51,46 +40,66 @@ const styles={
     padding: '0px'
   },
   containerLink: {
-    padding: '10px'
-  }
+    padding: '0 10px 0 10px'
+  },
+  containerImage: {
+    width:'40%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems:'center',
+    padding: '20px'
+  },
+  image: {
+    maxWidth: '600px',
+    width: '100%',
+    height: 'auto',
+    margin: 'auto',
+  },
 };
 
-export default function CardImageBottom(props) {
+export default function CardImageLeft(props) {
+  const desktop = useMediaQuery(theme => theme.breakpoints.up('md'));
   const theme = useTheme();
   const gridNum = 12/props.item.itemsPerRow
-  const height = (gridNum===12) ? "600px" : "100%"
+  const height = (gridNum===12) ? "700px" : "650px"
   return(
-    <Grid key={props.item.id} item xs={12} lg={gridNum}>
-      <Box sx={styles.gridItem} style={{ height: height, backgroundColor: props.item.background}} >
-        <Container sx={styles.container} maxWidth='lg' style={{color:theme.palette.text[props.item.color]}}>
-          <Container sx={styles.containerImage}>
-            <Box component="img" alt="Company Logo" src={props.item.image}  sx={styles.image}/>
-          </Container>
-          <Container sx={styles.containerTypographyAndLinks} >
-            <Container sx={styles.containerTypography} >
-              <Typography variant="h3" gutterBottom component="div">
-                {props.item.heading}
-              </Typography>
-              <Typography variant="h5" gutterBottom component="div">
-                {props.item.subheading}
-              </Typography>
+    <React.Fragment>
+      {desktop && (gridNum===12) ?
+        <Grid key={props.item.id} item xs={12} lg={gridNum}>
+          <Box sx={styles.gridItem} style={{ height: height, backgroundColor: props.item.background}} >
+            <Container sx={styles.container} maxWidth='lg' style={{color:theme.palette.text[props.item.color]}}>
+              <Container sx={styles.containerImage}>
+                <Box component="img" alt="Company Logo" src={props.item.image}  sx={styles.image}/>
+              </Container>
+              <Container sx={styles.containerTypographyAndLinks} >
+                <Container sx={styles.containerTypography} >
+                  <Typography variant="h3" gutterBottom component="div">
+                    {props.item.heading}
+                  </Typography>
+                  <Typography variant="body1" gutterBottom component="div">
+                    {props.item.subheading}
+                  </Typography>
+                </Container>
+                <Container sx={styles.containerLinks} >
+                  {props.item.buttonPrimary.text &&
+                  <Box sx={styles.containerLink} >
+                    <Button variant='outlined' component={RouterLink} to={props.item.buttonPrimary.link} >{props.item.buttonPrimary.text}</Button>
+                  </Box >
+                  }
+                  {props.item.buttonSecondary.text &&
+                  <Box sx={styles.containerLink} >
+                    <Button variant='contained' component={RouterLink} to={props.item.buttonSecondary.link} >{props.item.buttonSecondary.text}</Button>
+                  </Box >
+                  }
+                </Container>
+              </Container>
             </Container>
-            <Container sx={styles.containerLinks} >
-              {props.item.buttonPrimary.text &&
-              <Box sx={styles.containerLink} >
-                <RouterLink to={props.item.buttonPrimary.link} color="inherit" variant="h6">{props.item.buttonPrimary.text}</RouterLink>
-              </Box >
-              }
-              {props.item.buttonSecondary.text &&
-              <Box sx={styles.containerLink} >
-                <RouterLink underline="hover" to={props.item.buttonSecondary.link} color="inherit" variant="h6">{props.item.buttonSecondary.text}</RouterLink>
-              </Box >
-              }
-            </Container>
-          </Container>
-        </Container>
-      </Box>
-    </Grid>
+          </Box>
+        </Grid>
+        :
+        <CardImageBottom {...props}/>
+      }
+    </React.Fragment>
   );
 }
 

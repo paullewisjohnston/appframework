@@ -6,6 +6,9 @@
   "cart": true,
   "footer": true,
   "footerItems": [
+    ["One","Two","Three"],
+    ["One","Two","Three"],
+    ["One","Two","Three"]
   ],
   "copyright": "Copyright © 2022 AppFramework. All rights reserved.",
   "linkedin": "//linkedin.com/in/paul-lewis-johnston-3abb6b100/",
