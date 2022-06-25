@@ -1,124 +1,110 @@
-import React, {useState} from 'react';
-import { Container, Paper, TextField, Button } from '@mui/material'
-// import AWS from 'aws-sdk';
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { Link as RouterLink } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
-const styles={
-  root:{
-    background:'#fbfbfb',
-    height: '100vh'
-  },
-  form:{
-    '& .MuiTextField-root': {
-      // margin: theme.spacing(1),
-    },
-    display:'flex',
-    flexDirection: 'column',
-    textAlign: 'center',
-  },
-  button:{
-    marginTop: '20px'
-  },
-  container: {
-    padding: '40px'
-  },
-  paper: {
-    padding: '20px'
-  },
-};
 
-// const poolData = {
-//   UserPoolId: 'eu-west-2_vVJUIIn6W',  // get in Cognito console
-//   ClientId: '7dr22gj1dtcctc9tobm99l0qfh'  // cognito console -> App clients
-// }
-// // create an instance of User Pool
-// const cognitoService = new AWS.CognitoIdentityServiceProvider({apiVersion: '2016-04-18'});
-// const userPool = new AWS.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
 
-// function signUp(email, password, name, dob) {
-//   // attributes that should be placed onto user object, only name in your case
-//   const attributes = [
-//     { Name: 'name', Value: name },
-//     { Name: 'birthdate', Value: dob }
-//   ]
-//   userPool.signUp(email, password, attributes, null, onSignUp);
-// }
-
-// function onSignUp(err, userData) {
-//   if (err) {
-//       alert (JSON.stringify(err)); // for example if user already exists
-//   } else {
-//       console.log(userData); // good, user was successfully created
-//   }
-// }
-
-export default function Signup(props) {
-  const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState(false);
-  const [password, setPassword] = useState('');
-  const [passwordError, setPasswordError] = useState(false);
-  const [name, setName] = useState('');
-  const [nameError, setNameError] = useState(false);
-  const [dob, setDob] = useState('');
-  const [dobError, setDobError] = useState(false);
-
-  const handleChangeEmail = (event) => {
-    setEmail(event.target.value);
-    setEmailError(false);
+export default function SignUp() {
+  const [checked, setChecked] = React.useState(true);
+  const handleChangeCheckbox = (event) => {
+    setChecked(event.target.checked);
   };
 
-  const handleChangePassword = (event) => {
-    setPassword(event.target.value);
-    setPasswordError(false);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+      fname: data.get('firstName'),
+      lname: data.get('lastName'),
+      marketing: checked,
+    });
   };
 
-  const handleChangeName = (event) => {
-    setName(event.target.value);
-    setNameError(false);
-  };
-
-  const handleChangeDob = (event) => {
-    setDob(event.target.value);
-    setDobError(false);
-  };
-
-  const handleSignup = () => {
-    //UI validation - error handling
-    if(name==='')
-    {setNameError(true)}
-    if(email==='')
-    {setEmailError(true)}
-    if(password==='')
-    {setPasswordError(true)}
-    if(dob==='')
-    {setDobError(true)}
-    //else call api
-    //signUp(email, password, name, dob);
-
-  }
-
-  return(
-    <div sx={styles.root}>
-        <Container sx={styles.container} maxWidth='xs'>
-          <Paper sx={styles.paper} >
-            <form sx={styles.form} noValidate autoComplete="off">
-              <h1>Signup</h1>
-              <TextField id="email" label="Email Address" type="email" variant="outlined" value={email} error={emailError} onChange={handleChangeEmail}/>
-              <TextField id="password" label="Password" type="password" variant="outlined" value={password} error={passwordError} onChange={handleChangePassword}/>
-              <TextField id="name" label="Name" type="text" variant="outlined" value={name} error={nameError} onChange={handleChangeName}/>
-              <TextField id="dob" type="date" value={dob} variant="outlined" error={dobError} onChange={handleChangeDob}/>
-
-              <Button sx={styles.button} variant="contained" color="primary" onClick={handleSignup}>
-                Signup
+  return (
+    <Container component="main" maxWidth="xs">
+      <Box sx={{marginTop: 16, marginBottom: 16, display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+      >
+        <Typography component="h1" variant="h5">
+          Sign Up
+        </Typography>
+        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                autoComplete="given-name"
+                name="firstName"
+                required
+                fullWidth
+                id="firstName"
+                label="First Name"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                fullWidth
+                id="lastName"
+                label="Last Name"
+                name="lastName"
+                autoComplete="family-name"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="new-password"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" checked={checked} onChange={handleChangeCheckbox}/>}
+                label="Subscribe for rewards and marketing emails."
+              />
+            </Grid>
+          </Grid>
+          <Grid container justifyContent="center">
+            <Grid item>
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign Up
               </Button>
-              <Button sx={styles.button} variant="contained" color="primary">
-                Apple
-              </Button>
-              <Button sx={styles.button} variant="contained" color="primary">
-                Google
-              </Button>
-            </form>
-          </Paper>
-        </Container>
-      </div>
+            </Grid>
+          </Grid>
+          <Grid container justifyContent="center">
+            <Grid item>
+              <Button variant='text' component={RouterLink} to={'/signin'} >Already have an account? Sign In</Button>
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
+    </Container>
   );
 }

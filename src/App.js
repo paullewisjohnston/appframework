@@ -29,7 +29,6 @@ function App(){
           <Route path="/latest" element={<LandingPage data={dataHome} desktop={desktop}/>}/>
           <Route path="/download" element={<LandingPage data={dataHome} desktop={desktop}/>}/>
           <Route path="/store" element={<LandingPage data={dataHome} desktop={desktop}/>}/>
-          <Route path="/signup" element={<LandingPage data={dataHome} desktop={desktop}/>}/>
 
           {/* Footer routes*/}
           <Route path="/contact" element={<LandingPage data={dataHome} desktop={desktop}/>}/>

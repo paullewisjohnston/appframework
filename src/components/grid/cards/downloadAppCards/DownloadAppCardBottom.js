@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Grid, Typography, Box, Button} from '@mui/material'
-import { Link as RouterLink } from 'react-router-dom';
+import { Container, Grid, Typography, Box} from '@mui/material'
 import { useTheme } from '@mui/material/styles';
-import appleImage from '../../../../assets/images/apple.jpeg'
+import appstore from '../../../../assets/images/appstore.svg';
+import playstore from '../../../../assets/images/playstore.svg';
 
 const styles={
   gridItem: {
@@ -51,7 +51,7 @@ const styles={
   },
 };
 
-export default function PreviewCardImageBottom(props) {
+export default function DownloadAppCardBottom(props) {
   const theme = useTheme();
   const gridNum = 12/props.item.itemsPerRow
   const height = (gridNum===12) ? "700px" : "650px"
@@ -69,20 +69,20 @@ export default function PreviewCardImageBottom(props) {
               </Typography>
             </Container>
             <Container sx={styles.containerLinks} >
-              {props.item.buttonPrimary.text &&
-              <Box sx={styles.containerLink} >
-                <Button variant='outlined' component={RouterLink} to={props.item.buttonPrimary.link} >{props.item.buttonPrimary.text}</Button>
+            {props.item.buttonPrimary.link &&
+              <Box component="img" sx={styles.containerLink} src={appstore}>
+                {/* <Button variant='outlined' component={RouterLink} to={props.item.buttonPrimary.link} ></Button> */}
               </Box >
-              }
-              {props.item.buttonSecondary.text &&
-              <Box sx={styles.containerLink} >
-                <Button variant='contained' component={RouterLink} to={props.item.buttonSecondary.link} >{props.item.buttonSecondary.text}</Button>
+            }
+            {props.item.buttonSecondary.link &&
+              <Box component="img" sx={styles.containerLink} src={playstore}>
+                {/* <Button variant='contained' component={RouterLink} to={props.item.buttonSecondary.link} >TEST</Button> */}
               </Box >
-              }
+            }
             </Container>
           </Container>
           <Container sx={styles.containerImage}>
-            <Box component="img" alt="image description" src={appleImage}  sx={{ width: 250, height: 250, marginTop: '40px' }}/>
+            <Box component="img" alt="image description" src={props.item.image}  sx={{ width: 250, height: 250, marginTop: '40px' }}/>
           </Container>
         </Container>
       </Box>

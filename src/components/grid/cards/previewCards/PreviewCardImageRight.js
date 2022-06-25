@@ -3,6 +3,7 @@ import { Container, Grid, Typography, Box, Button } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import PreviewCardImageBottom from './PreviewCardImageBottom';
+import appleImage from '../../../../assets/images/apple.jpeg'
 
 const styles={
   gridItem: {
@@ -89,7 +90,7 @@ export default function PreviewCardImageRight(props) {
               </Container>
             </Container>
             <Container sx={styles.containerImage}>
-              <Box component="img" alt="Company Logo" src={props.item.image}  sx={styles.image}/>
+              <Box component="img" alt="Company Logo" src={appleImage}  sx={styles.image}/>
             </Container>
           </Container>
         </Box>

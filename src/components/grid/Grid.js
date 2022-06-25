@@ -1,10 +1,12 @@
 import React from 'react';
-import SubscriptionCard from './cards/SubscriptionCard';
+import SubscriptionCard from './cards/subscriptionCards/SubscriptionCard';
 import PreviewCardImageLeft from './cards/previewCards/PreviewCardImageLeft';
 import PreviewCardImageTop from './cards/previewCards/PreviewCardImageTop';
 import PreviewCardImageRight from './cards/previewCards/PreviewCardImageRight';
 import PreviewCardImageBottom from './cards/previewCards/PreviewCardImageBottom';
 import PreviewCardImageNone from './cards/previewCards/PreviewCardImageNone';
+import DownloadAppCard from './cards/downloadAppCards/DownloadAppCard';
+import DownloadAppCardBottom from './cards/downloadAppCards/DownloadAppCardBottom';
 import { Grid as GridLayout} from '@mui/material';
 
 const styles={
@@ -22,6 +24,8 @@ const cardSelector = (props, item) => {
       {item.type==="PreviewCardImageBottom" && <PreviewCardImageBottom {...props} item={item}/>}
       {item.type==="PreviewCardImageNone" && <PreviewCardImageNone {...props} item={item}/>}
       {item.type==="SubscriptionCard" && <SubscriptionCard {...props} item={item}/>}
+      {item.type==="DownloadAppCard" && <DownloadAppCard {...props} item={item}/>}
+      {item.type==="DownloadAppCardBottom" && <DownloadAppCardBottom {...props} item={item}/>}
     </React.Fragment>
   )
 }

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "url": "queens-university-belfast",
-    "type": "PreviewCardImageRight",
+    "type": "DownloadAppCard",
     "itemsPerRow": "1",
     "backgroundImage": "qub.png",
     "heading": "AirPods Pro",
@@ -11,12 +11,12 @@
     "buttonPrimary": 
       {
         "text":"Signup",
-        "link":""
+        "link":"/signup"
       },
       "buttonSecondary": 
       {
         "text":"Download",
-        "link":""
+        "link":"/download"
       },
     "image": "https://raw.githubusercontent.com/paullewisjohnston/appframework/master/src/assets/images/placeholder.webp",
     "background": "#fff7f9",
@@ -59,12 +59,12 @@
     "buttonPrimary": 
       {
         "text":"Learn More",
-        "link":""
+        "link":"/"
       },
       "buttonSecondary": 
       {
         "text":"Buy",
-        "link":""
+        "link":"/"
       },
     "image": "https://raw.githubusercontent.com/paullewisjohnston/appframework/master/src/assets/images/placeholder.webp",
     "color": "primaryLight",
