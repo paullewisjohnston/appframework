@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/appframework/static/css/main.5c6f9153.css",
-    "main.js": "/appframework/static/js/main.a0488db1.js",
+    "main.css": "/appframework/static/css/main.c7f211e3.css",
+    "main.js": "/appframework/static/js/main.c1536cff.js",
     "static/js/787.24cef3cb.chunk.js": "/appframework/static/js/787.24cef3cb.chunk.js",
+    "static/media/apple.jpeg": "/appframework/static/media/apple.f4aa4cf114ab0a039ab0.jpeg",
+    "static/media/appstore.svg": "/appframework/static/media/appstore.d71974ddbc01ea6c4c6bda24310af0c9.svg",
+    "static/media/playstore.svg": "/appframework/static/media/playstore.bc17412be6e6d3ad9a0a6ac50e5316b0.svg",
     "index.html": "/appframework/index.html",
-    "main.5c6f9153.css.map": "/appframework/static/css/main.5c6f9153.css.map",
-    "main.a0488db1.js.map": "/appframework/static/js/main.a0488db1.js.map",
+    "main.c7f211e3.css.map": "/appframework/static/css/main.c7f211e3.css.map",
+    "main.c1536cff.js.map": "/appframework/static/js/main.c1536cff.js.map",
     "787.24cef3cb.chunk.js.map": "/appframework/static/js/787.24cef3cb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c6f9153.css",
-    "static/js/main.a0488db1.js"
+    "static/css/main.c7f211e3.css",
+    "static/js/main.c1536cff.js"
   ]
 }
