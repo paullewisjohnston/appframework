@@ -81,14 +81,10 @@ export default function DownloadAppCardLeft(props) {
                 </Container>
                 <Container sx={styles.containerLinks} >
                   {props.item.buttonPrimary.link &&
-                  <RouterLink>
-                    <Box component="img" sx={styles.containerLink} src={appstore} to={props.item.buttonPrimary.link}/>
-                  </RouterLink>
+                    <Box component="img" sx={styles.containerLink} src={appstore}/>
                   }
                   {props.item.buttonSecondary.link &&
-                  <Box component="img" sx={styles.containerLink} src={playstore}>
-                    {/* <Button variant='contained' component={RouterLink} to={props.item.buttonSecondary.link} >TEST</Button> */}
-                  </Box >
+                    <Box component="img" sx={styles.containerLink} src={playstore}/>
                   }
                 </Container>
               </Container>
